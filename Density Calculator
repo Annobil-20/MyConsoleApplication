@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+int main(int argc, char** argv) {
+    //Program to calculate density
+
+    //variable declaration
+    float mass=0., volume=0., density=0.;
+    char response=' ';
+    int counter=0;//This will keep track of how many times the program was executed
+    //Function declaration
+    void requestEntry();//This function takes no parameters and returns nothing whenever it is called
+    float calcDensity(float, float);//This function takes on two float variables and returns a float
+
+    //This application shoud run over and over until the user wants to quit
+    cout<<"\n\t\t\tDensity Calculator\n";
+    cout<<"\t\t\t__________________\n\n";
+    do{
+        //Accepting Input
+        cout<<"\nEnter the value for the mass of the object: ";
+        cin>>mass;
+        cout<<"\nEnter the value for the volume of the object: ";
+        cin>>volume;
+        density=calcDensity(mass, volume);//Call the function calcDensity to do the calculation and return the result to variable density
+        //Output
+        cout<<"\nThe density of an object of mass "<<mass<<" and volume "<<volume<<" is "<<density<<endl<<endl;
+
+        //Prompt for whether to execute the program again
+        cout<<"Would you like to run this program again? (Y/N): ";
+        cin>>response;
+        counter++;//Each time through the loop, increment the value of counter by 1
+    }while(toupper(response)=='Y');//Convert the character entered by the user and if it matches uppercase Y then run the program one more time!
+    if(counter==1) cout<<"\nThe program was executed only once!\n";
+    else if(counter==2) cout<<"\nThe program was executed twice!!\n";
+    else if(counter>2) cout<<"\nThe program was executed "<<counter<<" times!!!\n";
+    cout<<"\nEnd of the Show!!!"<<endl<<endl;
+    system("PAUSE");
+    return 0;
+}
+
+//Defining the calcDensity Function
+float calcDensity(float m, float v){
+    return m/v;
+}
+
