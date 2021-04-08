@@ -1,0 +1,92 @@
+#include <stdio.h> //Header files
+#include <stdlib.h>
+
+int main() {
+   //variable declarations
+    int phone_number;
+   int momo_dialingcode;
+   int option;
+   int choice;
+   int opt;
+   int number;
+   int contact;
+   int deposit;
+   int witdraw;
+   int amount;
+   int total=10000;
+  
+
+   //Request for inputs and outputs
+   printf("Enter mobile money dialing code\n");
+   scanf("%d", &momo_dialingcode);
+
+   //This "if else" statement comes in to ensure a condition is well tackled.
+    if(momo_dialingcode==170){
+        printf(" Choose an option: \n");
+    }   else{
+        printf("End of show!");
+    }
+//Displaying options from which the user will choose.
+    printf("1.Transfer money?\n");
+             printf("2.Momo pay and pay bills??\n");
+                  printf("3.Airtime and bundles?\n");
+                      printf("4.Allow cash out\n");
+                   printf("5.Financial Services\n");
+             printf("6.My wallet\n");
+    scanf("%d", &option);
+//This "if " statement holds only for the selection of the option-Transfer of money.
+    if(option==1){
+       //Display options from which the user will choose from
+        printf("1. MTN\n");
+        printf("2. Other networks\n");
+printf("select an option\n");
+    //Request for input after selection an option from the above codes.
+    scanf("%d", &choice);
+    }
+    //This "if" statement holds for the selection of the option-MTN
+    if(choice==1)
+    {
+        //Display options from which the user chooses from.
+        printf("1. My List:\n");
+              printf("2. Enter receipient's number:\n");
+                    printf("Choose your choice\n");
+                    //Request for input
+                    scanf("%d", &opt);
+              //This "if statement" caters for the option-My list.
+                    if(opt==1) {
+                  printf("Select reciepient\n");
+            scanf("%d", &contact);
+      }
+          //The "else if statement" holds for the option-Enter receipient number.
+                    else if(opt==2){
+              printf("Enter number of recepient\n");
+              scanf("%d", &number);
+          } else if (option==2){
+                        printf("\n");
+                    }{
+              printf("INVALID OPTION!!!!!!\n");
+          }
+    }
+    //The "do while loop" is here to help check for the number of times to make a transaction depending on a condition
+    do {
+        printf("Enter amount to be sent:\n");
+        scanf("%d", &amount);
+    }
+    while (amount<=total);
+    //This "if statement" clarifies to the user that when the amount to be sent is larger than the reaming balance, transction won't be possible.
+    if(amount>total){
+           printf("YOU HAVE INSUFFICIENT BALANCE TO PERFORM THIS TRANSACTION!!!!\n");
+       }
+if (option==2){
+        printf("1. MoMoPay\n");
+    printf("2. Pay Bill\n");
+    printf("0. Back\n");
+    scanf("%d", &option);
+    printf("Choose action to be done from the following:\n");
+}
+ if (choice==2){
+     printf("\n");
+ }
+
+    return 0;
+}
